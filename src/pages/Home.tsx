@@ -1,8 +1,7 @@
 import { Box, Container, Grid, Heading, Text, Button, VStack, HStack, Link, Image } from '@chakra-ui/react'
 import { Check, Instagram, Plus, Youtube } from 'lucide-react'
 import { useState } from 'react'
-import AnimatedSection from '../components/AnimatedSection';
-
+import AnimatedSection from '../components/AnimatedSection'
 
 // Componente FAQ Item
 function FAQItem({ question, answer }: { question: string; answer?: string }) {
@@ -974,12 +973,20 @@ export default function Home() {
                   display="flex"
                   flexDirection="column"
                 >
-                  {/* Imagem do Plano (placeholder por enquanto) */}
+                  {/* Imagem do Plano */}
                   <Box
-                    bg="#e0e0e0"
                     h={{ base: '140px', md: '160px' }}
                     w="100%"
-                  />
+                    overflow="hidden"
+                  >
+                    <Image
+                      src="/images/familia1.avif"
+                      alt="Família - Plano Mensal"
+                      w="100%"
+                      h="100%"
+                      objectFit="cover"
+                    />
+                  </Box>
 
                   {/* Conteúdo do Card */}
                   <VStack align="center" p={{ base: 4, md: 5 }} gap={2.5}>
@@ -1130,12 +1137,20 @@ export default function Home() {
                   display="flex"
                   flexDirection="column"
                 >
-                  {/* Imagem do Plano (placeholder por enquanto) */}
+                  {/* Imagem do Plano */}
                   <Box
-                    bg="#e0e0e0"
                     h={{ base: '140px', md: '160px' }}
                     w="100%"
-                  />
+                    overflow="hidden"
+                  >
+                    <Image
+                      src="/images/familia2.avif"
+                      alt="Família - Plano Anual"
+                      w="100%"
+                      h="100%"
+                      objectFit="cover"
+                    />
+                  </Box>
 
                   {/* Conteúdo do Card */}
                   <VStack align="center" p={{ base: 4, md: 5 }} gap={2.5}>
@@ -1596,7 +1611,9 @@ export default function Home() {
                 {/* Redes Sociais */}
                 <HStack gap={3} mt={2}>
                   <Link
-                    href="#"
+                    href="https://www.instagram.com/todagentetelemedicina/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     w="40px"
                     h="40px"
                     borderRadius="full"
@@ -1612,7 +1629,9 @@ export default function Home() {
                     <Instagram />
                   </Link>
                   <Link
-                    href="#"
+                    href="https://www.youtube.com/@TodaGenteTelemedicina"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     w="40px"
                     h="40px"
                     borderRadius="full"
