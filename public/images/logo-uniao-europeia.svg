@@ -1,0 +1,10 @@
+<svg width="180" height="40" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="40" fill="#003399" rx="3"/>
+  <circle cx="25" cy="20" r="10" fill="#FFCC00"/>
+  <text x="95" y="17" font-family="Arial, sans-serif" font-size="10" fill="#FFCC00" text-anchor="middle" font-weight="bold">
+    Cofinanciado pela
+  </text>
+  <text x="95" y="29" font-family="Arial, sans-serif" font-size="10" fill="#FFCC00" text-anchor="middle" font-weight="bold">
+    União Europeia
+  </text>
+</svg>
