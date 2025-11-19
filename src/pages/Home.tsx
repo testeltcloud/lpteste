@@ -30,7 +30,7 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
         _hover={{ bg: 'rgba(255, 255, 255, 0.1)' }}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <HStack gap={3} flex={1}>
+        <HStack gap={3} flex={1} align="flex-start">
           <Plus
             size={20}
             style={{
@@ -38,7 +38,7 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
               transition: 'transform 0.3s'
             }}
           />
-          <Text>{question}</Text>
+          <Text flex={1} wordBreak="break-word">{question}</Text>
         </HStack>
       </Button>
       {isOpen && answer && (
