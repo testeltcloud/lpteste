@@ -989,7 +989,7 @@ export default function Home() {
                   </Box>
 
                   {/* Conteúdo do Card */}
-                  <VStack align="center" p={{ base: 4, md: 5 }} gap={2.5}>
+                  <VStack align="center" p={{ base: 4, md: 5 }} gap={2.5} flex={1}>
                     {/* Título do Plano */}
                     <Heading
                       as="h3"
@@ -1023,8 +1023,11 @@ export default function Home() {
                       </Heading>
                     </VStack>
 
+                    {/* Espaçador invisível para alinhar com o card anual */}
+                    <Box minH="32px" />
+
                     {/* Lista de Benefícios */}
-                    <VStack align="flex-start" gap={1.5} w="100%" fontSize="xs" color="#555" mt={1}>
+                    <VStack align="flex-start" gap={1.5} w="100%" fontSize="xs" color="#555" mt={1} flex={1}>
                       <HStack gap={1.5}>
                         <Box
                           w="14px"
@@ -1112,7 +1115,7 @@ export default function Home() {
                       fontSize={{ base: 'xs', md: 'sm' }}
                       fontWeight="700"
                       borderRadius="6px"
-                      mt={2}
+                      mt="auto"
                       transition="all 0.3s"
                       _hover={{
                         bg: '#3d6a9f',
@@ -1153,7 +1156,7 @@ export default function Home() {
                   </Box>
 
                   {/* Conteúdo do Card */}
-                  <VStack align="center" p={{ base: 4, md: 5 }} gap={2.5}>
+                  <VStack align="center" p={{ base: 4, md: 5 }} gap={2.5} flex={1}>
                     {/* Título do Plano */}
                     <Heading
                       as="h3"
@@ -1200,7 +1203,7 @@ export default function Home() {
                     </Text>
 
                     {/* Lista de Benefícios */}
-                    <VStack align="flex-start" gap={1.5} w="100%" fontSize="xs" color="#555" mt={1}>
+                    <VStack align="flex-start" gap={1.5} w="100%" fontSize="xs" color="#555" mt={1} flex={1}>
                       <HStack gap={1.5}>
                         <Box
                           w="14px"
@@ -1288,7 +1291,7 @@ export default function Home() {
                       fontSize={{ base: 'xs', md: 'sm' }}
                       fontWeight="700"
                       borderRadius="6px"
-                      mt={2}
+                      mt="auto"
                       transition="all 0.3s"
                       _hover={{
                         bg: '#3d6a9f',
