@@ -1198,10 +1198,11 @@ export default function Home() {
         {/* Seção 5 - Parte 2: Sobre Nós - Posicionada Absolutamente */}
         <Box
           position="absolute"
-          top="45%"
+          top={{ base: '60vh', md: '90vh' }}
           left="50%"
           transform="translate(-50%, -50%)"
           w={{ base: '90%', md: '80%', lg: '80%' }}
+          
           // h="400px"
           zIndex={10}
         >
