@@ -67,7 +67,8 @@ export default function Home() {
       {/* Hero Section */}
       <Box
         bg="linear-gradient(90deg, #2e4392 0%, #11a2d7 100%)"
-        h={{ base: '95vh', md: 'calc(97vh - 85px)' }}
+        h={{ base: '100vh', md: 'calc(97vh - 85px)' }}
+         mt={{ base: '-40%', md: '0' }} 
         position="relative"
         py={{ base: 6, md: 10 }}
         backgroundImage={{
@@ -104,6 +105,7 @@ export default function Home() {
               align="flex-start"
               gap={{ base: 3, md: 4 }}
               color="white"
+              
               maxW={{ base: '100%', md: '700px' }}
             >
               {/* Título Principal */}
