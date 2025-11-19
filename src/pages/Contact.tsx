@@ -1,5 +1,4 @@
-import { Box, Heading, Text, Stack, Input, Textarea, Button } from '@chakra-ui/react'
-import { Field } from '@chakra-ui/react'
+import { Box, Heading, Text, Stack, Input, Textarea, Button, VStack } from '@chakra-ui/react'
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
@@ -17,19 +16,22 @@ export default function Contact() {
       </Text>
 
       <Stack as="form" onSubmit={handleSubmit} gap={4}>
-        <Field label="Nome">
+        <VStack align="flex-start" gap={2}>
+          <Text fontSize="sm" fontWeight="600">Nome</Text>
           <Input placeholder="Seu nome" required />
-        </Field>
+        </VStack>
 
-        <Field label="Email">
+        <VStack align="flex-start" gap={2}>
+          <Text fontSize="sm" fontWeight="600">Email</Text>
           <Input type="email" placeholder="seu@email.com" required />
-        </Field>
+        </VStack>
 
-        <Field label="Mensagem">
+        <VStack align="flex-start" gap={2}>
+          <Text fontSize="sm" fontWeight="600">Mensagem</Text>
           <Textarea placeholder="Digite sua mensagem..." rows={5} required />
-        </Field>
+        </VStack>
 
-        <Button type="submit" colorPalette="brand" size="lg" width="full">
+        <Button type="submit" bg="#2e4392" color="white" size="lg" width="full" _hover={{ bg: '#11a2d7' }}>
           Enviar Mensagem
         </Button>
       </Stack>
