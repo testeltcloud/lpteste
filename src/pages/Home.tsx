@@ -1504,6 +1504,7 @@ export default function Home() {
         backgroundSize="cover"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
+        zIndex={1}
       >
         {/* Overlay */}
         <Box
@@ -1516,7 +1517,7 @@ export default function Home() {
           zIndex={1}
         />
 
-        <Container maxW="1000px" px={{ base: 4, md: 6, lg: 8 }} position="relative" zIndex={2}>
+        <Container maxW="1000px" px={{ base: 4, md: 6, lg: 8 }} position="relative" zIndex={2} marginBottom="20px">
           {/* Título */}
           <AnimatedSection direction="up" delay={0.1}>
             <Heading
@@ -1572,6 +1573,8 @@ export default function Home() {
         bg="white"
         py={{ base: 8, md: 10 }}
         borderTop="1px solid #e0e0e0"
+        position="relative"  
+        zIndex={10}          
       >
         <Container maxW="1400px" px={{ base: 4, md: 6, lg: 8 }}>
           <Grid
