@@ -29,33 +29,41 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
         transition="all 0.3s"
         _hover={{ bg: 'rgba(255, 255, 255, 0.1)' }}
         onClick={() => setIsOpen(!isOpen)}
+        whiteSpace="normal"  // Adicione esta linha
       >
         <HStack gap={3} flex={1} align="flex-start">
           <Plus
             size={20}
             style={{
               transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-              transition: 'transform 0.3s'
+              transition: 'transform 0.3s',
+              flexShrink: 0  // Adicione esta linha
             }}
           />
-          <Text flex={1} wordBreak="break-word">{question}</Text>
+          <Text 
+            flex={1} 
+            wordBreak="break-word"
+            whiteSpace="normal"  // Adicione esta linha
+          >
+            {question}
+          </Text>
         </HStack>
       </Button>
       {isOpen && answer && (
-  <Box
-    px={5}
-    py={4}
-    bg="rgba(255, 255, 255, 0.05)"
-    color="white"
-    fontSize={{ base: 'sm', md: 'md' }}
-    lineHeight="1.7"
-    borderTop="1px solid rgba(255, 255, 255, 0.1)"
-    wordBreak="break-word"
-    overflowWrap="break-word"
-  >
-    {answer}
-  </Box>
-)}
+        <Box
+          px={5}
+          py={4}
+          bg="rgba(255, 255, 255, 0.05)"
+          color="white"
+          fontSize={{ base: 'sm', md: 'md' }}
+          lineHeight="1.7"
+          borderTop="1px solid rgba(255, 255, 255, 0.1)"
+          wordBreak="break-word"
+          overflowWrap="break-word"
+        >
+          {answer}
+        </Box>
+      )}
     </Box>
   )
 }
