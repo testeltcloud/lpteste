@@ -42,18 +42,20 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
         </HStack>
       </Button>
       {isOpen && answer && (
-        <Box
-          px={5}
-          py={4}
-          bg="rgba(255, 255, 255, 0.05)"
-          color="white"
-          fontSize={{ base: 'sm', md: 'md' }}
-          lineHeight="1.7"
-          borderTop="1px solid rgba(255, 255, 255, 0.1)"
-        >
-          {answer}
-        </Box>
-      )}
+  <Box
+    px={5}
+    py={4}
+    bg="rgba(255, 255, 255, 0.05)"
+    color="white"
+    fontSize={{ base: 'sm', md: 'md' }}
+    lineHeight="1.7"
+    borderTop="1px solid rgba(255, 255, 255, 0.1)"
+    wordBreak="break-word"
+    overflowWrap="break-word"
+  >
+    {answer}
+  </Box>
+)}
     </Box>
   )
 }
