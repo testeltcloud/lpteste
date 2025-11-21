@@ -69,24 +69,24 @@ function FAQItem({ question, answer }: { question: string; answer?: string }) {
 }
 
 export default function Home() {
-  // CONFIGURE AQUI: Caminhos das imagens de fundo
-  const backgroundImageDesktop = '/images/hero-desktop.jpg' // Imagem de lateral (landscape)
-  const backgroundImageMobile = '/images/hero-mobile.jpg'   // Imagem de pé (portrait)
+  const backgroundImageDesktop = '/images/hero-desktop.jpg' 
+  const backgroundImageMobile = '/images/hero-mobile.jpg'   
   const backgroundImageCruz = '/images/fundoplano.jpg'
   return (
     <Box position="relative" overflow="hidden">
       {/* Hero Section */}
       <Box
         bg="linear-gradient(90deg, #2e4392 0%, #11a2d7 100%)"
-        h={{ base: '100vh', md: 'calc(97vh - 85px)' }}
-        mt={{ base: '-40%', md: '0' }}
+        h={{ base: '100vh', md: '100vh', lg: 'calc(97vh - 85px)' }}
+        mt={{ base: '0', md: '0' }}
         position="relative"
         py={{ base: 6, md: 10 }}
         backgroundImage={{
           base: `url(${backgroundImageMobile})`,
-          md: `url(${backgroundImageDesktop})`
+          sm: `url(${backgroundImageDesktop})`
         }}
         backgroundSize="cover"
+        backgroundPosition="center"
         backgroundRepeat="no-repeat"
         overflow="hidden"
         display="flex"
@@ -209,6 +209,12 @@ export default function Home() {
 
                 {/* Botão CTA */}
                 <Button
+                  onClick={() => {
+                    const planosSection = document.getElementById('planos');
+                    if (planosSection) {
+                      planosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
                   size="lg"
                   bg="rgba(46, 67, 146, 0.6)"
                   color="white"
@@ -221,7 +227,7 @@ export default function Home() {
                   borderRadius="50px"
                   mt={2}
                   transition="all 0.3s"
-                  textDecoration="none"
+                  cursor="pointer"
                   _hover={{
                     bg: 'white',
                     color: '#2e4392',
@@ -269,7 +275,7 @@ export default function Home() {
       {/* Seção: Não tem tempo a perder */}
       <Box
         bg="#f5f5f5"
-        py={{ base: 4, md: 6 }}
+        py="120px"
       >
         <Container maxW="1400px" px={{ base: 4, md: 6, lg: 8 }}>
           <Grid
@@ -384,7 +390,7 @@ export default function Home() {
 
       {/* Seção: E se o cuidado começasse antes */}
       <Box
-        py={{ base: 6, md: 10 }}
+        py="120px"
         position="relative"
         backgroundImage={{
           base: `url(${backgroundImageCruz})`,
@@ -542,7 +548,7 @@ export default function Home() {
       {/* Seção: O que muda em sua vida */}
       <Box
         bg="#ffffff"
-        py={{ base: 6, md: 10 }}
+        py="120px"
       >
         <Container maxW="1400px" px={{ base: 4, md: 6, lg: 8 }}>
           <Grid
@@ -645,13 +651,13 @@ export default function Home() {
 
             {/* Coluna Direita - Imagens */}
             <AnimatedSection direction="right" delay={0.3}>
-              <Box position="relative" display={{ base: 'none', lg: 'block' }} minH="600px">
+              <Box position="relative" display={{ base: 'none', md: 'block' }} minH={{ md: '500px', lg: '330px', xl: '330px', '2xl': '600px' }}>
                 {/* Imagem Maior - Mulher no Telefone (Superior Direita) */}
                 <Box
                   position="absolute"
                   top={0}
                   right={0}
-                  w="75%"
+                  w={{ md: '70%', lg: '65%', xl: '68%', '2xl': '75%' }}
                   borderRadius="20px"
                   overflow="hidden"
                   boxShadow="0 4px 20px rgba(0,0,0,0.1)"
@@ -669,9 +675,9 @@ export default function Home() {
                 {/* Imagem Menor - Pediatra (Inferior Esquerda, sobreposta) */}
                 <Box
                   position="absolute"
-                  bottom="10%"
+                  bottom={{ md: '5%', lg: '8%', xl: '8%', '2xl': '10%' }}
                   left={0}
-                  w="60%"
+                  w={{ md: '55%', lg: '50%', xl: '52%', '2xl': '60%' }}
                   borderRadius="20px"
                   overflow="hidden"
                   boxShadow="0 6px 25px rgba(0,0,0,0.15)"
@@ -690,7 +696,7 @@ export default function Home() {
 
             {/* Versão Mobile das Imagens */}
             <AnimatedSection direction="up" delay={0.2}>
-              <VStack gap={4} display={{ base: 'flex', lg: 'none' }}>
+              <VStack gap={4} display={{ base: 'flex', md: 'none' }}>
                 <Box borderRadius="20px" overflow="hidden" boxShadow="0 4px 20px rgba(0,0,0,0.1)">
                   <Image
                     src="https://todagentetelemedicina.com/wp-content/uploads/2025/05/img-sessao-9.webp"
@@ -719,8 +725,8 @@ export default function Home() {
       <Box position="relative">
         {/* Seção 5 - Parte 1: Tem acesso a */}
         <Box
-          py={{ base: 8, md: 12, lg: 14 }}
-          pb={{ base: 8, md: 48, lg: 52 }}
+          pt="120px"
+          pb={{ base: '120px', md: 48, lg: 52 }}
           position="relative"
           backgroundImage={{
             base: `url(/images/fundoaparelho.jpg)`,
@@ -889,12 +895,12 @@ export default function Home() {
 
         {/* Seção 5 - Parte 2: Sobre Nós - Mobile (Fluxo Normal) */}
         <Box
-          display={{ base: 'block', md: 'none' }}
+          display={{ base: 'block', lg: 'none' }}
           position="relative"
           backgroundImage="url(/images/medicoatendendo.jpg)"
           backgroundSize="cover"
           backgroundRepeat="no-repeat"
-          py={8}
+          py="120px"
         >
           <Box
             position="absolute"
@@ -946,8 +952,9 @@ export default function Home() {
 
         {/* Seção 5 - Parte 3: Planos */}
         <Box
-          pt={{ base: 6, md: 48, lg: 52 }}
-          pb={{ base: 6, md: 8 }}
+          id="planos"
+          pt={{ base: '120px', md: 48, lg: 52 }}
+          pb="120px"
           position="relative"
           // backgroundImage="url(/images/fundoplano.jpg)"
           backgroundSize="cover"
@@ -1320,12 +1327,12 @@ export default function Home() {
 
         {/* Seção 5 - Parte 2: Sobre Nós - Desktop (Posicionada Absolutamente) */}
         <Box
-          display={{ base: 'none', md: 'block' }}
+          display={{ base: 'none', lg: 'block' }}
           position="absolute"
-          top={{ md: '85vh', lg: '45%' }}
+          top="45%"
           left="50%"
           transform="translate(-50%, -50%)"
-          w={{ md: '80%', lg: '80%' }}
+          w="80%"
           zIndex={10}
         >
           <Box
@@ -1334,11 +1341,13 @@ export default function Home() {
             backgroundSize="cover"
             // backgroundPosition="center"
             backgroundRepeat="no-repeat"
-            py={{ base: 8, md: 12 }}
             borderRadius="20px"
             height="350px"
             overflow="hidden"
             boxShadow="0 8px 30px rgba(0,0,0,0.3)"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
           >
             {/* Overlay escuro semi-transparente */}
             <Box
@@ -1406,7 +1415,7 @@ export default function Home() {
       {/* Seção 6 - Como Funciona (3 Passos) */}
       <Box
         bg="#f5f5f5"
-        py={{ base: 6, md: 8 }}
+        py="120px"
       >
         <Container maxW="1400px" px={{ base: 4, md: 6, lg: 8 }}>
           <Grid
@@ -1414,6 +1423,7 @@ export default function Home() {
             gap={{ base: 4, md: 5, lg: 6 }}
             maxW="1200px"
             mx="auto"
+            alignItems="stretch"
           >
             {/* Card 1 - Escolha seu Plano */}
             <AnimatedSection direction="up" delay={0.1}>
@@ -1448,7 +1458,7 @@ export default function Home() {
                 p={{ base: 6, md: 7 }}
                 borderRadius="20px"
                 color="white"
-                minH={{ base: 'auto', md: '280px' }}
+                h="100%"
                 display="flex"
                 flexDirection="column"
                 gap={3}
@@ -1474,7 +1484,7 @@ export default function Home() {
                 p={{ base: 6, md: 7 }}
                 borderRadius="20px"
                 color="white"
-                minH={{ base: 'auto', md: '280px' }}
+                h="100%"
                 display="flex"
                 flexDirection="column"
                 gap={3}
@@ -1498,7 +1508,7 @@ export default function Home() {
 
       {/* Seção 7 - FAQ */}
       <Box
-        py={{ base: 8, md: 12 }}
+        py="120px"
         position="relative"
         backgroundImage="url(/images/medicoduvidas.jpg)"
         backgroundSize="cover"
